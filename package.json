@@ -1,5 +1,5 @@
 {
-  "name": "rails-v6-1-7-base-0",
+  "name": "rails_pdf_ninja_0",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
