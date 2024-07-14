@@ -10,6 +10,10 @@ gem 'jquery-rails'
 
 gem 'stripe'
 
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
 gem "dotenv-rails", "~> 3.1.2"
 #gem "dotenv-rails", "~> 2.8"
 
