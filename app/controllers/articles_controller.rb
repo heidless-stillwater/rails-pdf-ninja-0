@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = Article.new(params.require(:article).permit(:title, :description))
     @article.user = current_user
 
     respond_to do |format|

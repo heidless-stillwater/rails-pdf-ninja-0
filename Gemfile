@@ -14,6 +14,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+gem 'will_paginate', '~> 4.0'
+
 gem "dotenv-rails", "~> 3.1.2"
 #gem "dotenv-rails", "~> 2.8"
 
