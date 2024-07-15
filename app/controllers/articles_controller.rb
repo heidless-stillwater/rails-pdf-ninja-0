@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /articles/1 or /articles/1.json
@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @article = Article.find(params[:id])
   end
 
   # POST /articles or /articles.json
@@ -70,4 +71,12 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :description, :user_id)
     end
+
+    def require_same_user 
+      if current_user != @article.user && !current_user.admin?
+        flash[:alert] = "You can only edit or delete your own posts..."
+        redirect_to @article
+      end
+    end
+
 end
