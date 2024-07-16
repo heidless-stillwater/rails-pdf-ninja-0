@@ -9,5 +9,6 @@ class User < ApplicationRecord
 
   has_many :images
   has_many :articles
+  has_many :pdfs
   
 end
