@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pdfs
   resources :articles 
   # resources :articles, only: [:show, :index, :new, :create, :edit, :destroy]
 
