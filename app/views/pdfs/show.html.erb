@@ -8,10 +8,13 @@
   <dd><%= @pdf.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @pdf.description %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:pdfdoc) %>:</strong></dt>
   <dd><%= @pdf.pdfdoc %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @pdf.user_id %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:pdfdoc) %>:</strong></dt>
+  <dd><%= image_tag(@pdf.pdfdoc.url, size: "150x150") if @pdf.pdfdoc? %></dd>
+
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
