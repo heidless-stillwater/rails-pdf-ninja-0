@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @apod.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @apod.picture %>
+</p>
+
+<%= link_to 'Edit', edit_apod_path(@apod) %> |
+<%= link_to 'Back', apods_path %>

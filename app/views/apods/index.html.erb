@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apods</h1>
+
+<% if @apod['name'] %>
+
+ <p>Latest APOD image </p>
+ <p>Name: <%= @apod['name'] %> </p>
+ <p>Picture: <%= @apod['picture'] %> </p>
+ 
+<% else %>
+ <code> Please make sure you've updated your "api-key" in controllers/weatherController.rb </code>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apods.each do |apod| %>
+      <tr>
+        <td><%= apod.name %></td>
+        <td><%= apod.picture %></td>
+        <td><%= link_to 'Show', apod %></td>
+        <td><%= link_to 'Edit', edit_apod_path(apod) %></td>
+        <td><%= link_to 'Destroy', apod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apod', new_apod_path %>

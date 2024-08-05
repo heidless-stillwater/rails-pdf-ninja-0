@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :apods
   resources :weathers
   resources :images
   resources :pdfs
   resources :articles 
+  resources :apods 
+  
   # resources :articles, only: [:show, :index, :new, :create, :edit, :destroy]
 
   devise_for :users, :controllers => { :registrations => 'registrations' }
