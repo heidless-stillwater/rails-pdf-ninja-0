@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weathers
   resources :images
   resources :pdfs
   resources :articles 
